@@ -1,0 +1,9 @@
+<div id="comment-{{ comment.id }}">
+  <span>
+    {{ comment.content }}
+  </span>
+  <time datetime="{{ comment.created_at | date: '%Y-%m-%d' }}">
+    {{ comment.created_at | date: format: 'month_day_year' }}
+  </time>
+  {% render "author", author: comment.author %}
+</div>
