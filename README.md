@@ -36,3 +36,10 @@ class TestCard < MinitestShopify::LiquidTest
 end
 
 ```
+
+## Installation
+This is an experiment for the time being, if you want to try it out for yourself you can add the following definition to your gemfile:
+
+```ruby
+gem "minitest-shopify", git: "https://github.com/nebulab/minitest-shopify.git", branch: "main"
+```
