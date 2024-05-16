@@ -1,6 +1,7 @@
 require "minitest/autorun"
 require "capybara/minitest"
 require "liquid"
+require_relative "tags/schema_tag"
 
 class MinitestShopify::LiquidTest < Minitest::Test
   include Capybara::Minitest::Assertions
