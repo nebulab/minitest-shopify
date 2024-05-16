@@ -1,0 +1,29 @@
+<section>
+  <h2>
+    {{ section.settings.title }}
+  </h2>
+  {{ section.settings.image | image_url | image_tag }}
+</section>
+
+{% schema %}
+ {
+     "name": "Image with Title",
+     "settings": [
+         {
+             "type": "text",
+             "id": "title",
+             "label": "Title"
+         },
+         {
+             "type": "image_picker",
+             "id": "image",
+             "label": "Image"
+         }
+     ],
+     "presets": [
+         {
+             "name": "Image with Title"
+         }
+     ]
+ }
+{% endschema %}
