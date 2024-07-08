@@ -17,4 +17,8 @@ class MinitestShopify::Configuration
     # snippets.
     Liquid::Template.file_system = Liquid::LocalFileSystem.new(@theme_root, "snippets/%s.liquid")
   end
+
+  def assets_dir
+    File.join(@theme_root, "assets")
+  end
 end
