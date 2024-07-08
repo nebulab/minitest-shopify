@@ -11,4 +11,5 @@ module MinitestShopify
 
   require "minitest-shopify/configuration"
   require "minitest-shopify/liquid_test"
+  require "minitest-shopify/view_test"
 end

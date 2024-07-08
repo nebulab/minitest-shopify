@@ -1,8 +1,10 @@
 class MinitestShopify::Configuration
   attr_reader :theme_root
+  attr_accessor :selenium_driver
 
   def initialize
     @theme_root = "./theme"
+    @selenium_driver = :selenium_chrome_headless
   end
 
   def theme_root=(value)

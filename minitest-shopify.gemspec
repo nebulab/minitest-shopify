@@ -7,6 +7,9 @@ Gem::Specification.new do |s|
   s.files = Dir['lib/**/*.rb']
 
   s.add_dependency('capybara')
+  s.add_dependency('selenium-webdriver')
+  s.add_dependency('puma')
+  s.add_dependency('rackup')
   s.add_dependency('minitest')
   s.add_dependency('liquid')
 end

@@ -34,7 +34,32 @@ class TestCard < MinitestShopify::LiquidTest
     }
   end
 end
+```
 
+You can also use selenium to run tests that involve JavaScript or assets:
+
+```ruby
+require "minitest/autorun"
+require "minitest-shopify"
+
+class TestCardView < MinitestShopify::ViewTest
+  def test_javascript_enabled_card
+    render template: "snippets/js-card", variables: { "comment" => default_comment }
+    within "#comment-1" do
+      assert_text "Javascript is enabled"
+      assert_no_text "Hello World"
+    end
+  end
+
+  private
+
+  def default_comment
+    {
+      "id" => 1,
+      "content" => "Hello world!",
+    }
+  end
+end
 ```
 
 ## Installation

@@ -1,0 +1,9 @@
+<div id="comment-{{ comment.id }}">
+  <span>
+    {{ comment.content }}
+  </span>
+</div>
+
+<script>
+ document.querySelector('#comment-{{ comment.id }} span').textContent = "Javascript is enabled!"
+</script>
