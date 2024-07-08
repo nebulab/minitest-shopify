@@ -8,7 +8,7 @@ require_relative "filters/assets_filter"
 class MinitestShopify::LiquidTest < Minitest::Test
   include Capybara::Minitest::Assertions
 
-  def render(template:, variables:)
+  def render(template:, variables: {})
     file = File.read(File.join(MinitestShopify.configuration.theme_root, template) + ".liquid")
     template = Liquid::Template.parse(file, error_mode: :strict)
     @page = template.render!(**variables)
