@@ -2,8 +2,9 @@ require "minitest/autorun"
 require "minitest-shopify"
 
 class TestCardView < MinitestShopify::ViewTest
+  MinitestShopify.configuration.theme_root = File.join(__dir__, "theme")
+
   def test_javascript_enabled_card
-    MinitestShopify.configuration.theme_root = File.join(__dir__, "theme")
     render template: "snippets/js-card", variables: { "comment" => default_comment }
 
     within "#comment-1" do
