@@ -3,6 +3,7 @@ require "capybara/minitest"
 require "liquid"
 require_relative "tags/schema_tag"
 require_relative "filters/image_filter"
+require_relative "filters/assets_filter"
 
 class MinitestShopify::LiquidTest < Minitest::Test
   include Capybara::Minitest::Assertions
