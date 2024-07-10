@@ -9,13 +9,19 @@ class MinitestShopify::LiquidTest < Minitest::Test
   include Capybara::Minitest::Assertions
 
   def render(template:, variables: {})
-    file = File.read(File.join(MinitestShopify.configuration.theme_root, template) + ".liquid")
-    template = Liquid::Template.parse(file, error_mode: :strict)
-    @page = template.render!(**variables)
+    @page = render_liquid(template:, variables:)
   end
 
   # Helper to enable Capybara assertions on the rendered template.
   def page
     Capybara.string(@page)
+  end
+
+  private
+
+  def render_liquid(template:, variables:)
+    file = File.read(File.join(MinitestShopify.configuration.theme_root, template) + ".liquid")
+    template = Liquid::Template.parse(file, error_mode: :strict)
+    template.render!(**variables)
   end
 end
