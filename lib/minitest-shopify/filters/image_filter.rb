@@ -1,5 +1,5 @@
 module ImageFilter
-  def image_url(input)
+  def image_url(input, width = nil, height = nil)
     input
   end
 
