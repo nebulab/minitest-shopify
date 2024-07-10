@@ -6,6 +6,8 @@ Prototype of a minitest test class with capybara assertions capable of rendering
 ```ruby
 MinitestShopify.configure do |config|
   config.theme_root = File.join(__dir__, "theme")
+  config.selenium_driver = :selenium_chrome_headless
+  config.layout_file = "layout/theme"
 end
 ```
 
