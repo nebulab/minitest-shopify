@@ -2,6 +2,7 @@ require "minitest/autorun"
 require "capybara/minitest"
 require "liquid"
 require_relative "tags/schema_tag"
+require_relative "tags/section_tag"
 require_relative "filters/image_filter"
 require_relative "filters/assets_filter"
 

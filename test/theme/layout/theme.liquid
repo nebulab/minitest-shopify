@@ -3,5 +3,7 @@
   {{ 'main.css' | asset_url | stylesheet_tag }}
 </head>
 <body class="custom-layout">
+  {% section 'text' %}
+
   {{ content_for_layout }}
 </body>

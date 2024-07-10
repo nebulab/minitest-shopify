@@ -9,6 +9,7 @@ class TestLayout < MinitestShopify::LiquidTest
     render template: "snippets/card", variables: { "comment" => default_comment }
     assert_text "Hello layout!"
     assert_selector "body.custom-layout"
+    assert_selector "section"
   end
 
   private
