@@ -1,3 +1,5 @@
+require_relative "file_system"
+
 class MinitestShopify::Configuration
   attr_reader :theme_root
   attr_accessor :selenium_driver, :layout_file
@@ -16,7 +18,7 @@ class MinitestShopify::Configuration
     # only used to render a snippet or app block, however, we cannot
     # emulate the render of an app block, so its okay to default to
     # snippets.
-    Liquid::Template.file_system = Liquid::LocalFileSystem.new(@theme_root, "snippets/%s.liquid")
+    Liquid::Template.file_system = MinitestShopify::LocalFileSystem.new(@theme_root, "snippets/%s.liquid")
   end
 
   def assets_dir
