@@ -10,6 +10,12 @@ class MinitestShopify::LiquidTest < Minitest::Test
 
   def render(template:, variables: {})
     @page = render_liquid(template:, variables:)
+    unless MinitestShopify.configuration.layout_file.nil?
+      @page = render_liquid(
+        template: MinitestShopify.configuration.layout_file,
+        variables: variables.merge({ "content_for_layout" => @page })
+      )
+    end
   end
 
   # Helper to enable Capybara assertions on the rendered template.
