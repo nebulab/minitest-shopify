@@ -3,7 +3,7 @@ module ImageFilter
     input
   end
 
-  def image_tag(input, args)
+  def image_tag(input, args = [])
     attributes = args.map { |k, v| "#{k}=\"#{v}\"" }.join(" ")
     "<img src=\"#{input}\" #{attributes} />"
   end
