@@ -17,7 +17,7 @@ require "minitest-shopify"
 
 class TestCard < MinitestShopify::LiquidTest
   def test_renders_a_card
-    render template: "snippets/card", variables: { "comment" => default_comment }
+    render template: "snippets/card", variables: { comment: default_comment }
     assert_text "Hello world!"
     assert_text "John Doe"
   end
@@ -26,12 +26,12 @@ class TestCard < MinitestShopify::LiquidTest
 
   def default_comment
     {
-      "id" => 1,
-      "created_at" => "2023-07-20T19:31:35Z",
-      "content" => "Hello world!",
-      "author" => {
-        "id" => 1,
-        "name" => "John Doe"
+      id: 1,
+      created_at: "2023-07-20T19:31:35Z",
+      content: "Hello world!",
+      author: {
+        id: 1,
+        name: "John Doe"
       }
     }
   end
@@ -46,7 +46,7 @@ require "minitest-shopify"
 
 class TestCardView < MinitestShopify::ViewTest
   def test_javascript_enabled_card
-    render template: "snippets/js-card", variables: { "comment" => default_comment }
+    render template: "snippets/js-card", variables: { comment: default_comment }
     within "#comment-1" do
       assert_text "Javascript is enabled"
       assert_no_text "Hello World"
@@ -57,8 +57,8 @@ class TestCardView < MinitestShopify::ViewTest
 
   def default_comment
     {
-      "id" => 1,
-      "content" => "Hello world!",
+      id: 1,
+      content: "Hello world!",
     }
   end
 end
