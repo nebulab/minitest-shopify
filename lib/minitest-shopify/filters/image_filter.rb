@@ -8,4 +8,4 @@ module ImageFilter
     "<img src=\"#{input}\" #{attributes} />"
   end
 end
-Liquid::Template.register_filter(ImageFilter)
+Liquid::Environment.default.register_filter(ImageFilter)

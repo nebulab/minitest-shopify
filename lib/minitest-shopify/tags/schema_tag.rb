@@ -4,4 +4,4 @@ class SchemaTag < Liquid::Block
     nil
   end
 end
-Liquid::Template.register_tag('schema', SchemaTag)
+Liquid::Environment.default.register_tag('schema', SchemaTag)

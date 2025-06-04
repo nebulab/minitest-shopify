@@ -10,4 +10,4 @@ class SectionTag < Liquid::Tag
     template.render!
   end
 end
-Liquid::Template.register_tag('section', SectionTag)
+Liquid::Environment.default.register_tag('section', SectionTag)
