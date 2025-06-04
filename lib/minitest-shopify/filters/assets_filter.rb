@@ -11,4 +11,4 @@ module AssetsFilter
     "<link href=\"#{input}\" rel=\"stylesheet\" type=\"text/css\" media=\"all\" />"
   end
 end
-Liquid::Template.register_filter(AssetsFilter)
+Liquid::Environment.default.register_filter(AssetsFilter)
