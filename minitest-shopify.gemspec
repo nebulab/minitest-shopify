@@ -12,4 +12,5 @@ Gem::Specification.new do |s|
   s.add_dependency('rackup')
   s.add_dependency('minitest')
   s.add_dependency('liquid')
+  s.add_dependency('bigdecimal')
 end
