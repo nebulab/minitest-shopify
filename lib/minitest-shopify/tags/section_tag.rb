@@ -4,8 +4,7 @@ class SectionTag < Liquid::Tag
   end
 
   def render(context)
-    path = File.join(MinitestShopify.configuration.theme_root, "sections", @section_name) + ".liquid"
-    file = File.read(path)
+    file = MinitestShopify.configuration.theme_root.join("sections", @section_name + ".liquid").read
     template = Liquid::Template.parse(file, error_mode: :strict)
     template.render!
   end
