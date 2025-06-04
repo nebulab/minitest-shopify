@@ -18,7 +18,7 @@ class MinitestShopify::Configuration
     # only used to render a snippet or app block, however, we cannot
     # emulate the render of an app block, so its okay to default to
     # snippets.
-    Liquid::Template.file_system = MinitestShopify::LocalFileSystem.new(@theme_root, "snippets/%s.liquid")
+    Liquid::Environment.default.file_system = MinitestShopify::LocalFileSystem.new(@theme_root.to_s, "snippets/%s.liquid")
   end
 
   def assets_dir

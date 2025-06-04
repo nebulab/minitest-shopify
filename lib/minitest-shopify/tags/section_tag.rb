@@ -9,5 +9,6 @@ class SectionTag < Liquid::Tag
     template = Liquid::Template.parse(file, error_mode: :strict)
     template.render!
   end
+
+  Liquid::Environment.default.register_tag('section', self)
 end
-Liquid::Template.register_tag('section', SectionTag)

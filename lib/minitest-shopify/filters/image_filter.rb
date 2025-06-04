@@ -7,5 +7,6 @@ module ImageFilter
     attributes = args.map { |k, v| "#{k}=\"#{v}\"" }.join(" ")
     "<img src=\"#{input}\" #{attributes} />"
   end
+
+  Liquid::Environment.default.register_filter(self)
 end
-Liquid::Template.register_filter(ImageFilter)

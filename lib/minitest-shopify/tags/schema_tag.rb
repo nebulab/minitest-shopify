@@ -3,5 +3,6 @@ class SchemaTag < Liquid::Block
     # The schema tag renders nothing.
     nil
   end
+
+  Liquid::Environment.default.register_tag('schema', self)
 end
-Liquid::Template.register_tag('schema', SchemaTag)

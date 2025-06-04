@@ -10,5 +10,6 @@ module AssetsFilter
   def stylesheet_tag(input)
     "<link href=\"#{input}\" rel=\"stylesheet\" type=\"text/css\" media=\"all\" />"
   end
+
+  Liquid::Environment.default.register_filter(self)
 end
-Liquid::Template.register_filter(AssetsFilter)
