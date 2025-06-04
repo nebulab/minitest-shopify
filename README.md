@@ -13,7 +13,7 @@ end
 
 ```ruby
 require "minitest/autorun"
-require "minitest-shopify"
+require "minitest_shopify"
 
 class TestCard < MinitestShopify::LiquidTest
   def test_renders_a_card
@@ -42,7 +42,7 @@ You can also use selenium to run tests that involve JavaScript or assets:
 
 ```ruby
 require "minitest/autorun"
-require "minitest-shopify"
+require "minitest_shopify"
 
 class TestCardView < MinitestShopify::ViewTest
   def test_javascript_enabled_card
@@ -68,5 +68,5 @@ end
 This is an experiment for the time being, if you want to try it out for yourself you can add the following definition to your gemfile:
 
 ```ruby
-gem "minitest-shopify", git: "https://github.com/nebulab/minitest-shopify.git", branch: "main"
+gem "minitest_shopify", git: "https://github.com/nebulab/minitest_shopify.git", branch: "main"
 ```

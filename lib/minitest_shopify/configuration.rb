@@ -1,4 +1,3 @@
-require_relative "file_system"
 require "pathname"
 
 class MinitestShopify::Configuration

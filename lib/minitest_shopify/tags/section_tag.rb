@@ -1,4 +1,4 @@
-class SectionTag < Liquid::Tag
+class MinitestShopify::Tags::SectionTag < Liquid::Tag
   def initialize(tag_name, section_name, options)
     @section_name = section_name.strip.gsub("'", "")
   end

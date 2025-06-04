@@ -1,5 +1,3 @@
-require_relative "./liquid_test"
-
 class MinitestShopify::ViewTest < MinitestShopify::LiquidTest
   include Capybara::DSL
 

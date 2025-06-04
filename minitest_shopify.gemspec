@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name = 'minitest-shopify'
+  s.name = 'minitest_shopify'
   s.version = '0.1.0'
   s.summary = 'A minitest plugin for testing Shopify Liquid themes'
   s.authors = ['Nick Belzer']
@@ -13,4 +13,5 @@ Gem::Specification.new do |s|
   s.add_dependency('minitest')
   s.add_dependency('liquid')
   s.add_dependency('bigdecimal')
+  s.add_dependency('zeitwerk')
 end
