@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
+require_relative "lib/minitest_shopify/version"
 
 Gem::Specification.new do |spec|
   spec.name = 'minitest_shopify'
-  spec.version = '0.1.0'
+  spec.version = MinitestShopify::VERSION
   spec.authors = ['Nick Belzer']
   spec.email = 'nickbelzer@nebulab.com'
 

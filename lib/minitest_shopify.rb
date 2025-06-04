@@ -1,3 +1,4 @@
+require_relative "minitest_shopify/version"
 require "zeitwerk"
 
 module MinitestShopify
