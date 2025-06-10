@@ -1,4 +1,5 @@
 require "pathname"
+require "liquid"
 
 class MinitestShopify::Configuration
   attr_reader :theme_root

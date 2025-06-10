@@ -43,4 +43,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency('zeitwerk')
   spec.add_dependency('i18n')
   spec.add_dependency('money')
+  spec.add_dependency('loofah')
 end

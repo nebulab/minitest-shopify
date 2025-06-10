@@ -1,6 +1,7 @@
 require "minitest/autorun"
 require "capybara/minitest"
 require "liquid"
+require "loofah"
 
 MinitestShopify.loader.eager_load_namespace(MinitestShopify::Tags)
 MinitestShopify.loader.eager_load_namespace(MinitestShopify::Filters)
@@ -12,7 +13,8 @@ class MinitestShopify::LiquidTest < Minitest::Test
 
   def render(template:, variables: {})
     @page = render_liquid(template:, variables:)
-    unless MinitestShopify.configuration.layout_file.nil?
+
+    if MinitestShopify.configuration.layout_file
       @page = render_liquid(
         template: MinitestShopify.configuration.layout_file,
         variables: variables.merge({ content_for_layout: @page })
@@ -25,12 +27,18 @@ class MinitestShopify::LiquidTest < Minitest::Test
     Capybara.string(@page)
   end
 
-  private
-
   def render_liquid(template:, variables:)
     file = File.read(File.join(MinitestShopify.configuration.theme_root, template) + ".liquid")
     template = Liquid::Template.parse(file, error_mode: :strict)
     @output = template.render!(deep_stringify_keys(variables), {strict_variables: true, strict_filters: true})
+  end
+
+  def text
+    html&.to_text(encode_special_chars: false).gsub(/\s+/, ' ').strip
+  end
+
+  def html
+    Loofah.html5_fragment(@output)
   end
 
   def deep_stringify_keys(hash)
