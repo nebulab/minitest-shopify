@@ -8,6 +8,7 @@ MinitestShopify.loader.eager_load_namespace(MinitestShopify::Filters)
 class MinitestShopify::LiquidTest < Minitest::Test
   include Capybara::Minitest::Assertions
   include MinitestShopify::Filters::TranslationsFilter::TestHelper
+  include MinitestShopify::Filters::MoneyFilter::TestHelper
 
   def render(template:, variables: {})
     @page = render_liquid(template:, variables:)

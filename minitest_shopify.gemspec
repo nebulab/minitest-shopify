@@ -42,4 +42,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency('bigdecimal')
   spec.add_dependency('zeitwerk')
   spec.add_dependency('i18n')
+  spec.add_dependency('money')
 end
