@@ -17,7 +17,13 @@ class TestLayout < MinitestShopify::LiquidTest
   def default_comment
     {
       id: 1,
+      created_at: "2023-07-20T19:31:35Z",
       content: "Hello layout!",
+      author: {
+        id: 1,
+        name: "John Doe"
+      }
     }
+
   end
 end

@@ -30,7 +30,7 @@ class MinitestShopify::LiquidTest < Minitest::Test
   def render_liquid(template:, variables:)
     file = File.read(File.join(MinitestShopify.configuration.theme_root, template) + ".liquid")
     template = Liquid::Template.parse(file, error_mode: :strict)
-    template.render!(deep_stringify_keys(variables))
+    @output = template.render!(deep_stringify_keys(variables), {strict_variables: true, strict_filters: true})
   end
 
   def deep_stringify_keys(hash)
