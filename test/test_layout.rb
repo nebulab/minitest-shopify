@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require "minitest-shopify"
+require "minitest_shopify"
 
 class TestLayout < MinitestShopify::LiquidTest
   MinitestShopify.configuration.theme_root = File.join(__dir__, "theme")

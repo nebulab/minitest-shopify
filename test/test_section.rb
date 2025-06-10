@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require "minitest-shopify"
+require "minitest_shopify"
 
 class TestSection < MinitestShopify::LiquidTest
   def test_renders_a_section

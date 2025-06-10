@@ -1,13 +1,13 @@
-class SectionTag < Liquid::Tag
+class MinitestShopify::Tags::SectionTag < Liquid::Tag
   def initialize(tag_name, section_name, options)
     @section_name = section_name.strip.gsub("'", "")
   end
 
   def render(context)
-    path = File.join(MinitestShopify.configuration.theme_root, "sections", @section_name) + ".liquid"
-    file = File.read(path)
+    file = MinitestShopify.configuration.theme_root.join("sections", @section_name + ".liquid").read
     template = Liquid::Template.parse(file, error_mode: :strict)
     template.render!
   end
+
+  Liquid::Environment.default.register_tag('section', self)
 end
-Liquid::Template.register_tag('section', SectionTag)
