@@ -4,7 +4,7 @@ Prototype of a minitest test class with capybara assertions capable of rendering
 
 ## Example
 ```ruby
-MinitestShopify.configure do |config|
+MinitestShopifyThemes.configure do |config|
   config.theme_root = File.join(__dir__, "theme")
   config.selenium_driver = :selenium_chrome_headless
   config.layout_file = "layout/theme"
@@ -13,9 +13,9 @@ end
 
 ```ruby
 require "minitest/autorun"
-require "minitest_shopify"
+require "minitest_shopify_themes"
 
-class TestCard < MinitestShopify::LiquidTest
+class TestCard < MinitestShopifyThemes::LiquidTest
   def test_renders_a_card
     render template: "snippets/card", variables: { comment: default_comment }
     assert_text "Hello world!"
@@ -42,9 +42,9 @@ You can also use selenium to run tests that involve JavaScript or assets:
 
 ```ruby
 require "minitest/autorun"
-require "minitest_shopify"
+require "minitest_shopify_themes"
 
-class TestCardView < MinitestShopify::ViewTest
+class TestCardView < MinitestShopifyThemes::ViewTest
   def test_javascript_enabled_card
     render template: "snippets/js-card", variables: { comment: default_comment }
     within "#comment-1" do
@@ -68,5 +68,5 @@ end
 This is an experiment for the time being, if you want to try it out for yourself you can add the following definition to your gemfile:
 
 ```ruby
-gem "minitest_shopify", git: "https://github.com/nebulab/minitest_shopify.git", branch: "main"
+gem "minitest_shopify_themes", git: "https://github.com/nebulab/minitest_shopify_themes.git", branch: "main"
 ```

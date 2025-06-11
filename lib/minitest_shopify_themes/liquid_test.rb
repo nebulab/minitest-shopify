@@ -3,20 +3,20 @@ require "capybara/minitest"
 require "liquid"
 require "loofah"
 
-MinitestShopify.loader.eager_load_namespace(MinitestShopify::Tags)
-MinitestShopify.loader.eager_load_namespace(MinitestShopify::Filters)
+MinitestShopifyThemes.loader.eager_load_namespace(MinitestShopifyThemes::Tags)
+MinitestShopifyThemes.loader.eager_load_namespace(MinitestShopifyThemes::Filters)
 
-class MinitestShopify::LiquidTest < Minitest::Test
+class MinitestShopifyThemes::LiquidTest < Minitest::Test
   include Capybara::Minitest::Assertions
-  include MinitestShopify::Filters::TranslationsFilter::TestHelper
-  include MinitestShopify::Filters::MoneyFilter::TestHelper
+  include MinitestShopifyThemes::Filters::TranslationsFilter::TestHelper
+  include MinitestShopifyThemes::Filters::MoneyFilter::TestHelper
 
   def render(template:, variables: {})
     @page = render_liquid(template:, variables:)
 
-    if MinitestShopify.configuration.layout_file
+    if MinitestShopifyThemes.configuration.layout_file
       @page = render_liquid(
-        template: MinitestShopify.configuration.layout_file,
+        template: MinitestShopifyThemes.configuration.layout_file,
         variables: variables.merge({ content_for_layout: @page })
       )
     end
@@ -28,7 +28,7 @@ class MinitestShopify::LiquidTest < Minitest::Test
   end
 
   def render_liquid(template:, variables:)
-    file = File.read(File.join(MinitestShopify.configuration.theme_root, template) + ".liquid")
+    file = File.read(File.join(MinitestShopifyThemes.configuration.theme_root, template) + ".liquid")
     template = Liquid::Template.parse(file, error_mode: :strict)
     @output = template.render!(deep_stringify_keys(variables), {strict_variables: true, strict_filters: true})
   end

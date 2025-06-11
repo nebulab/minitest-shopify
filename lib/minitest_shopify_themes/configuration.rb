@@ -1,7 +1,7 @@
 require "pathname"
 require "liquid"
 
-class MinitestShopify::Configuration
+class MinitestShopifyThemes::Configuration
   attr_reader :theme_root
   attr_accessor :selenium_driver, :layout_file
 
@@ -19,7 +19,7 @@ class MinitestShopify::Configuration
     # only used to render a snippet or app block, however, we cannot
     # emulate the render of an app block, so its okay to default to
     # snippets.
-    Liquid::Environment.default.file_system = MinitestShopify::LocalFileSystem.new(@theme_root.to_s, "snippets/%s.liquid")
+    Liquid::Environment.default.file_system = MinitestShopifyThemes::LocalFileSystem.new(@theme_root.to_s, "snippets/%s.liquid")
   end
 
   def assets_dir

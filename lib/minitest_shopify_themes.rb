@@ -1,7 +1,7 @@
-require_relative "minitest_shopify/version"
+require_relative "minitest_shopify_themes/version"
 require "zeitwerk"
 
-module MinitestShopify
+module MinitestShopifyThemes
   def self.loader
     @loader ||= Zeitwerk::Loader.for_gem
   end

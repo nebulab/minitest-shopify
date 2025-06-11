@@ -1,6 +1,6 @@
 require 'money'
 
-module MinitestShopify::Filters::MoneyFilter
+module MinitestShopifyThemes::Filters::MoneyFilter
   module TestHelper
     def setup
       super
