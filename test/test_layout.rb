@@ -1,9 +1,9 @@
 require "minitest/autorun"
-require "minitest_shopify"
+require "minitest_shopify_themes"
 
-class TestLayout < MinitestShopify::LiquidTest
-  MinitestShopify.configuration.theme_root = File.join(__dir__, "theme")
-  MinitestShopify.configuration.layout_file = File.join("layout/theme")
+class TestLayout < MinitestShopifyThemes::LiquidTest
+  MinitestShopifyThemes.configuration.theme_root = File.join(__dir__, "theme")
+  MinitestShopifyThemes.configuration.layout_file = File.join("layout/theme")
 
   def test_renders_snippet_with_layout
     render template: "snippets/card", variables: { comment: default_comment }

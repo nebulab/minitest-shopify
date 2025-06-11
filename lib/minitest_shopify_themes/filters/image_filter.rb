@@ -1,4 +1,4 @@
-module MinitestShopify::Filters::ImageFilter
+module MinitestShopifyThemes::Filters::ImageFilter
   def image_url(input, width = nil, height = nil)
     input
   end

@@ -1,4 +1,4 @@
-class MinitestShopify::ViewTest < MinitestShopify::LiquidTest
+class MinitestShopifyThemes::ViewTest < MinitestShopifyThemes::LiquidTest
   include Capybara::DSL
 
   VIEWS_DIR = Dir.mktmpdir
@@ -6,10 +6,10 @@ class MinitestShopify::ViewTest < MinitestShopify::LiquidTest
   Capybara.server = :puma, { Silent: true }
 
   def setup
-    Capybara.current_driver = MinitestShopify.configuration.selenium_driver
+    Capybara.current_driver = MinitestShopifyThemes.configuration.selenium_driver
     Capybara.app ||= Rack::Lint.new Rack::Cascade.new [
       Rack::Files.new(VIEWS_DIR),
-      Rack::URLMap.new("/assets" => Rack::Files.new(MinitestShopify.configuration.assets_dir)),
+      Rack::URLMap.new("/assets" => Rack::Files.new(MinitestShopifyThemes.configuration.assets_dir)),
     ]
   end
 

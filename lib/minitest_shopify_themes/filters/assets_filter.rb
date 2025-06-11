@@ -1,4 +1,4 @@
-module MinitestShopify::Filters::AssetsFilter
+module MinitestShopifyThemes::Filters::AssetsFilter
   def asset_url(input)
     File.join("/assets", input)
   end

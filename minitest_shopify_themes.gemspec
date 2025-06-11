@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "lib/minitest_shopify/version"
+require_relative "lib/minitest_shopify_themes/version"
 
 Gem::Specification.new do |spec|
-  spec.name = 'minitest_shopify'
-  spec.version = MinitestShopify::VERSION
+  spec.name = 'minitest_shopify_themes'
+  spec.version = MinitestShopifyThemes::VERSION
   spec.authors = ['Nick Belzer']
   spec.email = 'nickbelzer@nebulab.com'
 

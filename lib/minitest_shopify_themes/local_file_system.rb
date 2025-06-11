@@ -1,6 +1,6 @@
 require "liquid"
 
-module MinitestShopify
+module MinitestShopifyThemes
   # This is an override for the LocalFileSystem that is part of Liquid
   # gem.  However, out of the box it does not support snippets with a
   # '-' in the name.  This override exists to allow for that and achieve

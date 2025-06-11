@@ -1,11 +1,11 @@
 require 'i18n'
 
-module MinitestShopify::Filters::TranslationsFilter
+module MinitestShopifyThemes::Filters::TranslationsFilter
   module TestHelper
     def setup
       super
 
-      Dir["#{MinitestShopify.configuration.theme_root}/locales/*.json"].each do |file|
+      Dir["#{MinitestShopifyThemes.configuration.theme_root}/locales/*.json"].each do |file|
         next if file.end_with?('.schema.json')
 
         command = %{node -pe "JSON.stringify(eval('data='+require('fs').readFileSync(0, 'utf8')))"}

@@ -1,9 +1,9 @@
 require "minitest/autorun"
-require "minitest_shopify"
+require "minitest_shopify_themes"
 
-class TestSection < MinitestShopify::LiquidTest
+class TestSection < MinitestShopifyThemes::LiquidTest
   def test_renders_a_section
-    MinitestShopify.configuration.theme_root = File.join(__dir__, "theme")
+    MinitestShopifyThemes.configuration.theme_root = File.join(__dir__, "theme")
 
     section_settings = {
       settings: {
@@ -17,7 +17,7 @@ class TestSection < MinitestShopify::LiquidTest
   end
 
   def test_renders_a_section_with_image_tag
-    MinitestShopify.configuration.theme_root = File.join(__dir__, "theme")
+    MinitestShopifyThemes.configuration.theme_root = File.join(__dir__, "theme")
 
     section_settings = {
       settings: {
